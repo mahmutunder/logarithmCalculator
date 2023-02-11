@@ -24,6 +24,7 @@ public class LogCalculator extends JFrame implements ActionListener {
         add(new JLabel("Number:"));
         // number field
         numberField = new JTextField(10);
+        numberField.setFont(new Font(Font.SANS_SERIF,0,20));
         // add frame
         add(numberField);
 
@@ -31,6 +32,7 @@ public class LogCalculator extends JFrame implements ActionListener {
         add(new JLabel("Base:"));
         // base input box
         baseField = new JTextField(10);
+        baseField.setFont(new Font(Font.SANS_SERIF,0,20));
         // add frame
         add(baseField);
 
@@ -45,7 +47,7 @@ public class LogCalculator extends JFrame implements ActionListener {
         add(calculateButton);
 
         // instantiate result label to show result
-        result=new JLabel("Result:");
+        result=new JLabel("Result of log: ");
         result.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         result.setForeground(Color.white);
         result.setBackground(Color.red);
@@ -78,7 +80,8 @@ public class LogCalculator extends JFrame implements ActionListener {
         }catch (RuntimeException ex){
             JOptionPane.showMessageDialog(null,"Only number please!!");
         }
-        result.setText("Result: "+(resultLog));
+        String resultLogShow=String.format("Result of log: %.4f",(resultLog));
+        result.setText(resultLogShow);
 
     }
 
