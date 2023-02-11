@@ -37,6 +37,8 @@ public class LogCalculator extends JFrame implements ActionListener {
 
         // instantiate calculate button
          calculateButton = new JButton("Calculate");
+         calculateButton.setFocusable(false);
+         calculateButton.setFont(new Font(Font.DIALOG,2,15));
          // add action when click
         calculateButton.addActionListener(this);
         // add the frame
@@ -44,6 +46,10 @@ public class LogCalculator extends JFrame implements ActionListener {
 
         // instantiate result label to show result
         result=new JLabel("Result:");
+        result.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        result.setForeground(Color.white);
+        result.setBackground(Color.red);
+        result.setOpaque(true);
 
         // add the frame
         add(result);
